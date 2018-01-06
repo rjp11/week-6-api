@@ -15,7 +15,7 @@ for (var i = 0; i < topics.length; i++) {
     $(".buttons").append("<button class='btn-default btn-lg'>" + topics[i] + "</button>");
 };
 
-$("button").on("click", function () {
+$(document).on("click", "button", function () {
     resultCount = 0;
     var search = $(this).text();
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -41,20 +41,18 @@ $("button").on("click", function () {
                         gifDiv.append(gifImage);
                         gifDiv.append(p);
                         $(".gifs").prepend(gifDiv);
-                        console.log(gifImage);
                         resultCount++;
-                    }
-                }
-            }
-        })
+                    };
+                };
+            };
+        });
 });
 
-$("img").on("click", function(){
-    if ($(this).attr("data-status") === "0"){
+$(document).on("click", "img", function () {
+    if ($(this).attr("data-status") === "0") {
         $(this).attr("src", $(this).attr("data-gif"));
         $(this).attr("data-status", 1);
-    }
-    else {
+    } else {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-status", 0);
     };
