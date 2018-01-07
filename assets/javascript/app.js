@@ -11,10 +11,6 @@ var topics = [
 ];
 var resultCount = 0;
 
-for (var i = 0; i < topics.length; i++) {
-    $(".buttons").append("<button class='btn-default btn-lg'>" + topics[i] + "</button>");
-};
-
 $(document).on("click", "button", function () {
     resultCount = 0;
     var search = $(this).text();
@@ -57,3 +53,27 @@ $(document).on("click", "img", function () {
         $(this).attr("data-status", 0);
     };
 });
+
+function renderButtons() {
+    $(".buttons").empty();
+    for (var i = 0; i < topics.length; i++) {
+        $(".buttons").append("<button class='btn-default btn-lg'>" + topics[i] + "</button>");
+    };
+};
+
+
+
+$("#add-topic").on("click", function (event) {
+    var newTopic = $("#topic-input").val().trim();
+    if (topics.indexOf(newTopic) === -1) {
+        event.preventDefault();
+        topics.push(newTopic);
+        console.log(topics);
+        renderButtons();
+        $("#topic-input").val('');
+    } else {
+        event.preventDefault();
+    };
+});
+
+renderButtons();
