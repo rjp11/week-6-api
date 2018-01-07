@@ -8,6 +8,13 @@ var topics = [
     "giraffe",
     "koala",
     "polar bear",
+    "kangaroo",
+    "elephant",
+    "anteater",
+    "squirrel",
+    "sea horse",
+    "flamingo",
+    "owl"
 ];
 var resultCount = 0;
 
@@ -28,7 +35,7 @@ $(document).on("click", "button", function () {
                     if (results[j].rating !== "r" && results[j].rating !== "pg-13") {
                         var gifDiv = $("<div class='item'>");
                         var rating = results[j].rating;
-                        var p = $("<p>").text("Rating: " + rating);
+                        var p = $("<h4>").text("Rating: " + rating);
                         var gifImage = $("<img>");
                         gifImage.attr("data-still", results[j].images.fixed_height_still.url)
                         gifImage.attr("data-gif", results[j].images.fixed_height.url);
@@ -73,6 +80,7 @@ $("#add-topic").on("click", function (event) {
         $("#topic-input").val('');
     } else {
         event.preventDefault();
+        $("#topic-input").val('');
     };
 });
 
