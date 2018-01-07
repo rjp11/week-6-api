@@ -9,6 +9,7 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <!-- bootsatch simplex theme -->
     <link rel='stylesheet' href='https://bootswatch.com/3/paper/bootstrap.min.css'>
+    <!-- link to google fonts: Permanent Marker Font -->
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <!-- additional local css styling -->
     <link rel='stylesheet' href='assets/css/style.css'>
@@ -26,11 +27,21 @@
             </div>
         </div>
 
+        <!-- div appears before gifs on sm and xs screens -->
+        <div class="topic-add hidden-lg hidden-md col-sm-12 col-xs-12 text-center">
+            <form id="topic-form">
+                <h3>Add an animal</h3>
+                <input type="text" id="topic-input">
+                <input id="add-topic" type="submit" value="Submit">
+            </form>
+        </div>
+
         <div class="row">
-            <div class="gifs text-center col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <div class="gifs text-center col-lg-9 col-md-9 col-sm-12 col-xs-12">
             </div>
 
-            <div class="topic-add col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+            <!-- div appears on the right side of the gifs for md and lg screens -->
+            <div class="topic-add col-lg-3 col-md-3 hidden-sm hidden-xs text-center">
                 <form id="topic-form">
                     <h3>Add an animal</h3>
                     <input type="text" id="topic-input">
@@ -39,7 +50,6 @@
             </div>
         </div>
     </div>
-
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
         crossorigin='anonymous'>
